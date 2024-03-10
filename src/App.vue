@@ -28,7 +28,7 @@ import { ref as fbRef, child, get } from "firebase/database";
 const db = inject('$db')
 const dbRef = fbRef(db)
 
-get(child(dbRef, 'userinfo')).then((snapshot) => {
+get(child(dbRef, 'userinfo/name')).then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val())
   } else {
